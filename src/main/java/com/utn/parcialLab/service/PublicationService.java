@@ -2,6 +2,7 @@ package com.utn.parcialLab.service;
 
 import com.utn.parcialLab.model.Publication;
 import com.utn.parcialLab.model.User;
+import com.utn.parcialLab.repository.ComentsxPublications;
 import com.utn.parcialLab.repository.PublicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,5 +24,9 @@ public class PublicationService {
 
     public Publication save(Publication p){
         return publicationRepository.save(p);
+    }
+
+    public ComentsxPublications getCount(Integer pid){
+        return publicationRepository.getCount(pid);
     }
 }

@@ -16,7 +16,8 @@ public class Comment {
     private String description;
     private LocalDate date;
 
-    @ManyToOne
+    @OneToOne
+    @JsonIgnore
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)

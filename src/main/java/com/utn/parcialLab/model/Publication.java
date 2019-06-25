@@ -1,6 +1,7 @@
 package com.utn.parcialLab.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.utn.parcialLab.repository.ComentsxPublications;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,6 +22,7 @@ public class Publication {
     private LocalDate date;
     private Integer liked;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     @JsonIgnore
@@ -28,4 +30,6 @@ public class Publication {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "publication")
     private List<Comment> commentList;
+
+
 }
